@@ -1,0 +1,692 @@
+import Head from "next/head";
+import TitleBar from "@/components/TitleBar";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowUpRight,
+  Menu,
+  Umbrella,
+  HeartPulse,
+  Rocket,
+  ArrowRight,
+  ArrowLeft,
+  MapPin,
+  PhoneCall,
+  AtSign,
+} from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
+import ClientCard from "@/components/client-card";
+import WhatWeBringItem from "@/components/what-we-bring-item";
+import Star from "@/components/svgs/star";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Recognise Demo</title>
+        <meta name="description" content="Demo website for Recognise Design" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className="min-h-screen min-w-[768px]">
+        {/* copied background from the figma but seems to be a bit off */}
+        <section className="bg-[url(/bg.png)] bg-cover bg-center">
+          <TitleBar
+            leftContent={
+              <div className="relative h-full w-auto px-4">
+                {/* TODO: fix logo resizing issue */}
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="h-full w-auto object-contain"
+                  priority
+                />
+              </div>
+            }
+            centerContent={
+              <div className="flex items-center gap-2 px-4 md:px-8 lg:px-24">
+                <NavigationMenu
+                  className="rounded-full bg-white p-2"
+                  viewport={false}
+                >
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink
+                        asChild
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <Link href="/">Home</Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <NavigationMenuLink>Services</NavigationMenuLink>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <NavigationMenuLink>Industries</NavigationMenuLink>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink
+                        asChild
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <Link href="/about-us">About Us</Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      {/* aschild makes the link component look like a navigation menu trigger */}
+                      <NavigationMenuLink
+                        asChild
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <Link href="/Work">Work</Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink
+                        asChild
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <Link href="/blog">Blog</Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </div>
+            }
+            rightContent={
+              <div className="flex items-center gap-2 px-4 md:px-8 lg:px-24">
+                <Link href="/contact">
+                  <Button className="flex h-8 w-24 cursor-pointer items-center rounded-full bg-orange-400 text-sm text-white hover:bg-orange-500 md:h-9 md:w-28 md:text-base lg:w-32">
+                    Contact
+                    <ArrowUpRight className="h-3 w-3 md:h-4 md:w-4" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-slate-600 text-white hover:bg-slate-700 md:h-9 md:w-9">
+                    <Menu className="h-3 w-3 md:h-4 md:w-4" />
+                  </Button>
+                </Link>
+              </div>
+            }
+          />
+          <div className="container mx-auto w-full px-4 py-4 md:py-12 lg:py-32">
+            <h1
+              className={cn(
+                "font-weight-600 text-center text-4xl font-bold text-white uppercase md:text-5xl lg:text-[64px] xl:text-[80px] 2xl:text-[92px]",
+                jakarta.className,
+              )}
+            >
+              High-Performance Web <br />
+              Platforms for <br />
+              <span className="text-orange-400">Regulated Businesses</span>
+            </h1>
+            <p className="pt-[5%] text-center text-xl font-normal text-gray-200 md:text-2xl lg:text-3xl">
+              We build secure digital products for companies where compliance,
+              speed, and results <br /> matter. Our clients include leading
+              insurance providers, medical brands, and technical <br /> teams
+              across the UK and Europe.
+            </p>
+            <div className="flex justify-center pt-8">
+              <Link href="/contact">
+                <Button className="flex h-12 w-24 cursor-pointer rounded-full bg-orange-400 text-sm text-white uppercase hover:bg-orange-600 md:h-12 md:w-48 md:text-base lg:h-16 lg:w-72 lg:text-3xl">
+                  Let's Talk
+                  <ArrowUpRight className="size-10" strokeWidth={1} />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+        <div className="mx-auto px-4 py-4 md:py-6 lg:py-8">
+          <Image
+            src="/clients.png"
+            alt="Clients"
+            width={2000}
+            height={2000}
+            className="h-auto w-full"
+          />
+        </div>
+        <div className="container mx-auto w-full px-4 py-4 md:py-6 lg:py-8">
+          <div className="flex flex-col items-center justify-center">
+            <h2
+              className={cn(
+                "text-center text-2xl font-semibold text-[#175070] capitalize md:text-3xl lg:text-5xl",
+                jakarta.className,
+              )}
+            >
+              You need systems that scale and teams
+              <br />
+              <span className="text-orange-400">that understand risk</span>
+            </h2>
+          </div>
+          <div className="flex flex-col items-center justify-center pt-8">
+            <p className="text-center text-xl font-light md:text-2xl lg:text-3xl">
+              We work with:
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-16 md:gap-8 md:pt-24">
+            <div className="relative my-6 h-[224px] w-full rounded-2xl border-2 border-gray-200 md:w-[437px] lg:my-0">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white p-2">
+                <div className="rounded-full bg-orange-400 p-4">
+                  <Umbrella className="h-20 w-20 text-white" />
+                </div>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span className="text-center text-lg font-medium text-teal-800 md:text-xl lg:text-2xl">
+                  Insurance companies
+                </span>
+              </div>
+            </div>
+            <div className="relative my-6 h-[224px] w-full rounded-2xl border-2 border-gray-200 md:w-[437px] lg:my-0">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white p-2">
+                <div className="rounded-full bg-orange-400 p-4">
+                  <HeartPulse className="h-20 w-20 text-white" />
+                </div>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span className="text-center text-lg font-medium text-teal-800 md:text-xl lg:text-2xl">
+                  Healthcare providers
+                </span>
+              </div>
+            </div>
+            <div className="relative my-6 h-[224px] w-full rounded-2xl border-2 border-gray-200 md:w-[437px] lg:my-0">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white p-2">
+                <div className="rounded-full bg-orange-400 p-4">
+                  <Rocket className="h-20 w-20 text-white" />
+                </div>
+              </div>
+              <div className="flex h-full items-center justify-center">
+                <span className="text-center text-lg font-medium text-teal-800 md:text-xl lg:text-2xl">
+                  Operations teams in <br />
+                  regulated markets
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center pt-8">
+            <p className="text-center text-lg font-light md:text-xl">
+              We help you launch fast, track performance, and reduce review
+              cycles.
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto mb-12 w-full bg-[url(/rd-background.png)] bg-cover bg-center px-8 py-4 md:py-6 lg:py-8">
+          <h2 className="mx-8 py-8 text-center text-2xl font-medium text-white capitalize md:text-3xl lg:text-5xl">
+            What We Do
+          </h2>
+          <h3 className="text-center text-xl font-light text-white md:text-2xl">
+            We build and manage
+          </h3>
+          <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl bg-white p-10">
+              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+                Websites using <br />
+                <span className="text-orange-400">umbraco cms</span>
+              </span>
+            </div>
+            <div className="rounded-xl bg-white p-10">
+              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+                Secure hosting and architechure with <br />
+                <span className="text-orange-400">microsoft azure</span>
+              </span>
+            </div>
+            <div className="rounded-xl bg-white p-10">
+              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+                <span className="text-orange-400">high-conversion</span>
+                <br />
+                journeys for customer aquisition
+              </span>
+            </div>
+            <div className="rounded-xl bg-white p-10">
+              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+                Automated testing with <br />
+                <span className="text-orange-400">cypress</span>
+              </span>
+            </div>
+          </div>
+          <div className="flex gap-8">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300">
+              <ArrowLeft className="h-6 w-6" />
+            </div>
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300">
+              <ArrowRight className="h-6 w-6" />
+            </div>
+            <div className="mt-8 h-[4px] w-[90%] rounded-4xl bg-gradient-to-r from-orange-400 from-30% to-white to-30%"></div>
+          </div>
+          <div className="my-8 flex items-center justify-between">
+            <span className="text-center text-sm font-light text-white lg:text-lg xl:text-2xl">
+              We help you launch fast, track performance, and reduce review
+              cycles.
+            </span>
+
+            <Button className="h-16 w-48 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-64 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
+              View all services
+              <ArrowUpRight className="size-10" strokeWidth={1} />
+            </Button>
+          </div>
+        </div>
+
+        <div className="px-8">
+          <h2 className="text-2xl font-medium text-[#175070] capitalize md:text-3xl lg:text-5xl">
+            Tools Built In-House
+          </h2>
+          <div className="mt-8 flex flex-col gap-8 xl:flex-row xl:justify-evenly">
+            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-8 md:flex-row md:items-center">
+              <div className="flex h-full items-center">
+                <Image
+                  src="/optiloom.png"
+                  alt="Optiloom logo"
+                  width={250}
+                  height={250}
+                />
+              </div>
+
+              <div className="flex flex-grow items-center space-y-4 rounded-3xl bg-white p-8 text-center md:text-left">
+                <div className="flex-grow">
+                  <h2 className="text-3xl font-semibold text-[#0d5173]">
+                    Opti Loom
+                  </h2>
+                  <div className="text-xl font-light text-gray-700">
+                    <p>Run AB tests directly on your live site.</p>
+                    <p>Track results.</p>
+                    <p>Make confident changes backed by data.</p>
+                  </div>
+                </div>
+                <div className="flex-shrink-0">
+                  <button
+                    className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300"
+                    aria-label="Learn more"
+                  >
+                    <ArrowUpRight
+                      className="h-9 w-9 text-gray-700"
+                      strokeWidth={2}
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-8 md:flex-row md:items-center">
+              <div className="flex h-full items-center">
+                <Image
+                  src="/change-detection.png"
+                  alt="Change Detection"
+                  width={250}
+                  height={250}
+                />
+              </div>
+
+              <div className="flex flex-grow items-center space-y-4 rounded-3xl bg-white p-8 text-center md:text-left">
+                <div className="flex-grow">
+                  <h2 className="text-3xl font-semibold text-[#0d5173]">
+                    Observe IQ
+                  </h2>
+                  <div className="text-xl font-light text-gray-700">
+                    <p>Automatically log and compare page changes.</p>
+                    <p> See full before-and-after screenshots.</p>
+                    <p>
+                      Cut the back-and-forth between marketing and compliance.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex-shrink-0">
+                  <button
+                    className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300"
+                    aria-label="Learn more"
+                  >
+                    <ArrowUpRight
+                      className="h-9 w-9 text-gray-700"
+                      strokeWidth={2}
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto w-full px-8 py-4 md:py-6 lg:py-8">
+          <h2 className="text-2xl font-medium text-[#175070] capitalize md:text-3xl lg:text-5xl">
+            Our Work In Action
+          </h2>
+          <div className="mt-8 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <ClientCard
+              name="Columbus Assicurazioni"
+              image="/columbus-italy.png"
+              bp1="Adapted the platform for the Italian market."
+              bp2="Full Umbraco build with Azure hosting."
+              bp3="Supports thousands of users daily."
+            />
+            <ClientCard
+              name="ECC"
+              image="/ecc.png"
+              bp1="Designed and developed a web and mobile app."
+              bp2="Helped their teams handle installations, customer data, and scheduling."
+              bp3="Cut time spent on admin."
+            />
+            <ClientCard
+              name="Berkeley Square Medical "
+              image="/berkeley-medical.png"
+              bp1="Upgraded the site for private surgery in Harley Street."
+              bp2="Improved booking experience."
+              bp3="Met strict design and compliance standards."
+            />
+            <ClientCard
+              name="Columbus Direct "
+              image="/columbus-direct.png"
+              bp1="We rebuilt the insurance site."
+              bp2="Improved performance and conversion."
+              bp3="Connected marketing, compliance, and customer service."
+            />
+          </div>
+        </div>
+        <div className="mx-auto w-full px-8 py-4 md:py-6 lg:py-8">
+          <h2 className="py-4 text-2xl font-medium text-[#175070] capitalize md:text-3xl lg:text-5xl">
+            Why RD Digital?
+          </h2>
+          <h3 className="text-xl font-medium text-orange-400 md:text-2xl lg:text-3xl">
+            Trusted by digital leaders
+          </h3>
+          <hr className="my-8 border-1 border-gray-300" />
+          <div>
+            <span className="text-md text-center font-normal text-gray-700 md:text-xl lg:text-2xl">
+              Based in Hertfordshire, serving London and beyond. We work with
+              CTOs, CMOs, and Directors who need reliable delivery. They come to
+              us when internal teams are stretched or tools are falling short.
+            </span>
+            <div className="text-md flex justify-between py-8 font-normal text-gray-700 md:text-xl lg:text-2xl">
+              <div>
+                We bring:
+                <ul className="py-4">
+                  <li>
+                    <WhatWeBringItem text="Fast onboarding and planning" />
+                    <WhatWeBringItem text="Direct access to technical leads" />
+                    <WhatWeBringItem text="Clear updates, outcomes, and data" />
+                    <WhatWeBringItem text="Long-term support and improvements" />
+                  </li>
+                </ul>
+              </div>
+              <div className="relative flex h-56 w-[35%] flex-col justify-between rounded-3xl bg-gray-200 p-4">
+                <div className="flex flex-col">
+                  <span className="text-5xl font-bold text-black">+15</span>
+                  <span className="text-xl text-gray-600">
+                    Years of Experience
+                  </span>
+                </div>
+                <div className="absolute right-0 bottom-0">
+                  <Image
+                    src="/clock.png"
+                    alt="clock"
+                    width={200}
+                    height={200}
+                    className="h-40 w-40"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto mb-12 w-full bg-[url(/rd-background.png)] bg-cover bg-center px-8 py-4 md:py-12 lg:py-24">
+          <h2 className="mx-8 pt-16 pb-8 text-center text-2xl font-medium text-white capitalize md:text-3xl lg:text-5xl">
+            Want to reduce time spent chasing fixes?
+          </h2>
+          <h3 className="pb-8 text-center text-lg font-light text-white md:text-xl lg:text-2xl">
+            Need a partner that works across tech and compliance?
+          </h3>
+          <Button className="mx-auto flex h-16 w-48 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-64 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
+            Let's Talk
+            <ArrowUpRight className="size-10" strokeWidth={1} />
+          </Button>
+        </div>
+
+        <div className="mb-12 px-8 py-4 md:py-6 lg:py-8">
+          <div className="flex justify-between">
+            <div>
+              <h2 className="text-2xl font-medium text-[#175070] md:text-3xl lg:text-5xl">
+                <div className="flex flex-col">
+                  <span className="pb-3">What our clients say</span>
+                  <span className="pb-3">about our services</span>
+                </div>
+                <div className="flex gap-4 pt-32">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-500 text-gray-500 hover:cursor-pointer hover:border-gray-400 hover:text-gray-400">
+                    <ArrowLeft className="h-6 w-6" />
+                  </div>
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border bg-[#175070] text-white hover:cursor-pointer hover:bg-[#1E5C82]">
+                    <ArrowRight className="h-6 w-6" />
+                  </div>
+                </div>
+              </h2>
+            </div>
+            <div className="w-[50%] p-4">
+              <span className="text-lg font-[330] text-gray-900 md:text-xl lg:text-2xl">
+                Lorem ipsum dolor sit amet consectetur. Praesent ac massa morbi
+                viverra at laoreet urna elementum. Lorem ipsum dolor sit amet
+                consectetur. Praesent ac massa morbi viverra at laoreet urna
+                elementum. Lorem ipsum
+              </span>
+              <div className="flex py-8">
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+              </div>
+              <div className="flex">
+                <Image
+                  src="/alex-matrix.png"
+                  alt="Alex matrix"
+                  width={100}
+                  height={100}
+                  className="h-20 w-20"
+                />
+                <div className="flex flex-col pl-4">
+                  <span className="text-xl font-normal text-gray-900">
+                    Alex matrix
+                  </span>
+                  <span className="text-lg font-light text-gray-700">
+                    Matrix
+                  </span>
+                </div>
+              </div>
+              <div className="flex gap-3 py-8">
+                <div className="h-4 w-4 rounded-full bg-[#DFEAF2]" />
+                <div className="h-4 w-4 rounded-full bg-[#DFEAF2]" />
+                <div className="h-4 w-12 rounded-full bg-[#175070]" />
+                <div className="h-4 w-4 rounded-full bg-[#DFEAF2]" />
+                <div className="h-4 w-4 rounded-full bg-[#DFEAF2]" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto w-full px-8 py-4 md:py-6 lg:py-8">
+          <h2 className="text-2xl font-medium text-[#175070] md:text-3xl lg:text-5xl">
+            FAQ
+          </h2>
+          <div className="mt-8">
+            <Accordion type="single" collapsible className="w-full">
+              <div className="grid grid-cols-2 gap-8">
+                <AccordionItem value="item-1" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    What services does your app development company offer?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    What are the benefits of A/B testing?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    How long does it take to create an app?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    How many visitors do I need, and how long should I run an
+                    A/B test?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    Do you offer ongoing support and maintenance?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    What technologies do you specialise in?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    What do web designers near me offer?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="border-none">
+                  <hr className="mb-4 border-1 border-gray-300" />
+                  <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
+                    What industries do you specialise in for web design?
+                  </AccordionTrigger>
+                  <AccordionContent>answer here</AccordionContent>
+                </AccordionItem>
+              </div>
+            </Accordion>
+          </div>
+        </div>
+        <div className="w-full bg-[#175070] pt-16 pb-0">
+          <div className="mx-auto flex max-w-[90%] flex-col items-start justify-between gap-8 rounded-3xl bg-white px-8 pt-24 pb-64 shadow-lg md:flex-row">
+            <div className="flex min-w-[180px] flex-col items-start gap-8">
+              <img
+                src="/logo-blue.png"
+                alt="RD Digital Logo"
+                className="mb-2 w-50"
+              />
+            </div>
+            <div className="grid w-full flex-1 grid-cols-1 justify-items-center gap-8 lg:grid-cols-4">
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                  SERVICES
+                </h3>
+                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                  <li>Web Development</li>
+                  <li>Mobile App Development</li>
+                  <li>Email Development</li>
+                  <li>SEO Services</li>
+                  <li>A/B Testing</li>
+                  <li>Cloud Development</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                  INDUSTRIES
+                </h3>
+                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                  <li>Travel Insurance</li>
+                  <li>Electric Vehicle Charging</li>
+                  <li>Healthcare & Surgeries</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                  COMPANY
+                </h3>
+                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                  <li>About Us</li>
+                  <li>Our Work</li>
+                  <li>Insights</li>
+                  <li>Contact</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                  CONTACT
+                </h3>
+                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                  <li className="flex items-center gap-2">
+                    <span>
+                      <MapPin />
+                    </span>
+                    Hertfordshire, UK
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>
+                      <PhoneCall />
+                    </span>
+                    +44 1234 567890
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>
+                      <AtSign />
+                    </span>
+                    info@recognisedesign.com
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="mx-auto flex max-w-[90%] flex-col items-center justify-between px-8 py-4 py-10 text-sm font-bold text-white md:flex-row lg:text-xl">
+            <span>© 2025 RD Digital. All rights reserved.</span>
+            <div className="mt-2 flex gap-8 font-normal md:mt-0">
+              <a href="#" className="hover:underline">
+                Sitemap
+              </a>
+              <a href="#" className="hover:underline">
+                Terms & Conditions
+              </a>
+              <a href="#" className="hover:underline">
+                Privacy
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
