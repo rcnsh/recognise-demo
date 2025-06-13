@@ -158,7 +158,7 @@ export default function Home() {
             <div className="flex justify-center pt-8">
               <Link href="/contact">
                 <Button className="flex h-12 w-24 cursor-pointer rounded-full bg-orange-400 text-sm text-white uppercase hover:bg-orange-600 md:h-12 md:w-48 md:text-base lg:h-16 lg:w-72 lg:text-3xl">
-                  Let's Talk
+                  Let&apos;s Talk
                   <ArrowUpRight className="size-10" strokeWidth={1} />
                 </Button>
               </Link>
@@ -460,7 +460,7 @@ export default function Home() {
             Need a partner that works across tech and compliance?
           </h3>
           <Button className="mx-auto flex h-16 w-48 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-64 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
-            Let's Talk
+            Let&apos;s Talk
             <ArrowUpRight className="size-10" strokeWidth={1} />
           </Button>
         </div>
