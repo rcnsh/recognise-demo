@@ -49,12 +49,12 @@ export default function Home() {
         <meta name="description" content="Demo website for Recognise Design" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen min-w-[768px]">
+      <main className="min-h-screen w-full overflow-x-hidden">
         {/* copied background from the figma but seems to be a bit off */}
         <section className="bg-[url(/bg.png)] bg-cover bg-center">
           <TitleBar
             leftContent={
-              <div className="relative h-full w-auto px-4">
+              <div className="relative h-full w-auto px-2 sm:px-4">
                 {/* TODO: fix logo resizing issue */}
                 <Image
                   src="/logo.png"
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
             }
             centerContent={
-              <div className="flex items-center gap-2 px-4 md:px-8 lg:px-24">
+              <div className="hidden items-center gap-2 px-2 sm:px-4 md:flex md:px-8 lg:px-24">
                 <NavigationMenu
                   className="rounded-full bg-white p-2"
                   viewport={false}
@@ -141,23 +141,24 @@ export default function Home() {
           <div className="container mx-auto w-full px-4 py-4 md:py-12 lg:py-32">
             <h1
               className={cn(
-                "font-weight-600 text-center text-4xl font-bold text-white uppercase md:text-5xl lg:text-[64px] xl:text-[80px] 2xl:text-[92px]",
+                "font-weight-600 text-center text-3xl font-bold text-white uppercase sm:text-4xl md:text-5xl lg:text-[64px] xl:text-[80px] 2xl:text-[92px]",
                 jakarta.className,
               )}
             >
-              High-Performance Web <br />
-              Platforms for <br />
+              High-Performance Web <br className="hidden sm:block" />
+              Platforms for <br className="hidden sm:block" />
               <span className="text-orange-400">Regulated Businesses</span>
             </h1>
-            <p className="pt-[5%] text-center text-xl font-normal text-gray-200 md:text-2xl lg:text-3xl">
+            <p className="pt-[5%] text-center text-lg font-normal text-gray-200 sm:text-xl md:text-2xl lg:text-3xl">
               We build secure digital products for companies where compliance,
-              speed, and results <br /> matter. Our clients include leading
-              insurance providers, medical brands, and technical <br /> teams
-              across the UK and Europe.
+              speed, and results <br className="hidden sm:block" /> matter. Our
+              clients include leading insurance providers, medical brands, and
+              technical <br className="hidden sm:block" /> teams across the UK
+              and Europe.
             </p>
             <div className="flex justify-center pt-8">
               <Link href="/contact">
-                <Button className="flex h-12 w-24 cursor-pointer rounded-full bg-orange-400 text-sm text-white uppercase hover:bg-orange-600 md:h-12 md:w-48 md:text-base lg:h-16 lg:w-72 lg:text-3xl">
+                <Button className="flex h-12 w-36 cursor-pointer rounded-full bg-orange-400 text-sm text-white uppercase hover:bg-orange-600 md:h-12 md:w-48 md:text-base lg:h-16 lg:w-72 lg:text-3xl">
                   Let&apos;s Talk
                   <ArrowUpRight className="size-10" strokeWidth={1} />
                 </Button>
@@ -192,7 +193,7 @@ export default function Home() {
               We work with:
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-16 md:gap-8 md:pt-24">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-8 md:gap-8 md:pt-24">
             <div className="relative my-6 h-[224px] w-full rounded-2xl border-2 border-gray-200 md:w-[437px] lg:my-0">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white p-2">
                 <div className="rounded-full bg-orange-400 p-4">
@@ -245,49 +246,49 @@ export default function Home() {
           <h3 className="text-center text-xl font-light text-white md:text-2xl">
             We build and manage
           </h3>
-          <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl bg-white p-10">
-              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+          <div className="grid grid-cols-1 gap-8 py-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl bg-white p-4 sm:p-10">
+              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
                 Websites using <br />
                 <span className="text-orange-400">umbraco cms</span>
               </span>
             </div>
-            <div className="rounded-xl bg-white p-10">
-              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+            <div className="rounded-xl bg-white p-4 sm:p-10">
+              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
                 Secure hosting and architechure with <br />
                 <span className="text-orange-400">microsoft azure</span>
               </span>
             </div>
-            <div className="rounded-xl bg-white p-10">
-              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+            <div className="rounded-xl bg-white p-4 sm:p-10">
+              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
                 <span className="text-orange-400">high-conversion</span>
                 <br />
                 journeys for customer aquisition
               </span>
             </div>
-            <div className="rounded-xl bg-white p-10">
-              <span className="text-3xl font-semibold text-[#1c526f] uppercase">
+            <div className="rounded-xl bg-white p-4 sm:p-10">
+              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
                 Automated testing with <br />
                 <span className="text-orange-400">cypress</span>
               </span>
             </div>
           </div>
           <div className="flex gap-8">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300">
-              <ArrowLeft className="h-6 w-6" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300 md:h-16 md:w-16">
+              <ArrowLeft className="h-4 w-4 md:h-6 md:w-6" />
             </div>
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300">
-              <ArrowRight className="h-6 w-6" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300 md:h-16 md:w-16">
+              <ArrowRight className="h-4 w-4 md:h-6 md:w-6" />
             </div>
             <div className="mt-8 h-[4px] w-[90%] rounded-4xl bg-gradient-to-r from-orange-400 from-30% to-white to-30%"></div>
           </div>
-          <div className="my-8 flex items-center justify-between">
+          <div className="my-8 flex items-center justify-between gap-8">
             <span className="text-center text-sm font-light text-white lg:text-lg xl:text-2xl">
               We help you launch fast, track performance, and reduce review
               cycles.
             </span>
 
-            <Button className="h-16 w-48 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-64 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
+            <Button className="h-16 w-32 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-48 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
               View all services
               <ArrowUpRight className="size-10" strokeWidth={1} />
             </Button>
@@ -299,7 +300,7 @@ export default function Home() {
             Tools Built In-House
           </h2>
           <div className="mt-8 flex flex-col gap-8 xl:flex-row xl:justify-evenly">
-            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-8 md:flex-row md:items-center">
+            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-4 sm:p-8 md:flex-row md:items-center">
               <div className="flex h-full items-center">
                 <Image
                   src="/optiloom.png"
@@ -333,7 +334,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-8 md:flex-row md:items-center">
+            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-4 sm:p-8 md:flex-row md:items-center">
               <div className="flex h-full items-center">
                 <Image
                   src="/change-detection.png"
@@ -375,7 +376,7 @@ export default function Home() {
           <h2 className="text-2xl font-medium text-[#175070] capitalize md:text-3xl lg:text-5xl">
             Our Work In Action
           </h2>
-          <div className="mt-8 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <ClientCard
               name="Columbus Assicurazioni"
               image="/columbus-italy.png"
@@ -434,8 +435,10 @@ export default function Home() {
               </div>
               <div className="relative flex h-56 w-[35%] flex-col justify-between rounded-3xl bg-gray-200 p-4">
                 <div className="flex flex-col">
-                  <span className="text-5xl font-bold text-black">+15</span>
-                  <span className="text-xl text-gray-600">
+                  <span className="text-4xl font-bold text-black md:text-5xl">
+                    +15
+                  </span>
+                  <span className="text-md text-gray-600 md:text-xl">
                     Years of Experience
                   </span>
                 </div>
@@ -445,7 +448,7 @@ export default function Home() {
                     alt="clock"
                     width={200}
                     height={200}
-                    className="h-40 w-40"
+                    className="h-20 w-20 md:h-32 md:w-32 lg:h-40 lg:w-40"
                   />
                 </div>
               </div>
@@ -466,14 +469,14 @@ export default function Home() {
         </div>
 
         <div className="mb-12 px-8 py-4 md:py-6 lg:py-8">
-          <div className="flex justify-between">
+          <div className="flex flex-col justify-between sm:flex-row">
             <div>
               <h2 className="text-2xl font-medium text-[#175070] md:text-3xl lg:text-5xl">
                 <div className="flex flex-col">
                   <span className="pb-3">What our clients say</span>
                   <span className="pb-3">about our services</span>
                 </div>
-                <div className="flex gap-4 pt-32">
+                <div className="flex gap-4 pt-16 sm:pt-32">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-500 text-gray-500 hover:cursor-pointer hover:border-gray-400 hover:text-gray-400">
                     <ArrowLeft className="h-6 w-6" />
                   </div>
@@ -483,7 +486,7 @@ export default function Home() {
                 </div>
               </h2>
             </div>
-            <div className="w-[50%] p-4">
+            <div className="w-full p-4 sm:w-[50%]">
               <span className="text-lg font-[330] text-gray-900 md:text-xl lg:text-2xl">
                 Lorem ipsum dolor sit amet consectetur. Praesent ac massa morbi
                 viverra at laoreet urna elementum. Lorem ipsum dolor sit amet
@@ -531,7 +534,7 @@ export default function Home() {
           </h2>
           <div className="mt-8">
             <Accordion type="single" collapsible className="w-full">
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <AccordionItem value="item-1" className="border-none">
                   <hr className="mb-4 border-1 border-gray-300" />
                   <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
@@ -581,7 +584,7 @@ export default function Home() {
                   <AccordionContent>answer here</AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-6" className="border-none">
+                <AccordionItem value="item-7" className="border-none">
                   <hr className="mb-4 border-1 border-gray-300" />
                   <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
                     What do web designers near me offer?
@@ -589,7 +592,7 @@ export default function Home() {
                   <AccordionContent>answer here</AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-6" className="border-none">
+                <AccordionItem value="item-8" className="border-none">
                   <hr className="mb-4 border-1 border-gray-300" />
                   <AccordionTrigger className="text-3xl font-normal text-[#0C0E0E] capitalize">
                     What industries do you specialise in for web design?
@@ -600,92 +603,225 @@ export default function Home() {
             </Accordion>
           </div>
         </div>
-        <div className="w-full bg-[#175070] pt-16 pb-0">
-          <div className="mx-auto flex max-w-[90%] flex-col items-start justify-between gap-8 rounded-3xl bg-white px-8 pt-24 pb-64 shadow-lg md:flex-row">
-            <div className="flex min-w-[180px] flex-col items-start gap-8">
-              <img
-                src="/logo-blue.png"
-                alt="RD Digital Logo"
-                className="mb-2 w-50"
-              />
+        <footer className="w-full bg-[#175070] pt-16 pb-0" role="contentinfo">
+          <div className="mx-auto max-w-[90%] rounded-3xl bg-white p-8 px-4 py-16 shadow-lg sm:px-8 sm:py-24">
+            {/* Mobile Layout */}
+            <div className="grid grid-cols-1 gap-12 md:hidden">
+              {/* Logo Section */}
+              <div>
+                <img
+                  src="/logo-blue.png"
+                  alt="RD Digital Logo"
+                  className="h-12 w-auto"
+                  width={200}
+                  height={48}
+                />
+              </div>
+
+              {/* Navigation Sections */}
+              <nav
+                className="grid grid-cols-2 gap-8"
+                aria-label="Footer Navigation"
+              >
+                <div>
+                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
+                    Services
+                  </h2>
+                  <ul className="space-y-2 text-base text-[#1B1819]">
+                    {[
+                      "Web Development",
+                      "Mobile App Development",
+                      "Email Development",
+                      "SEO Services",
+                      "A/B Testing",
+                      "Cloud Development",
+                    ].map((item) => (
+                      <li key={item}>
+                        <a
+                          href="#"
+                          className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
+                    Industries
+                  </h2>
+                  <ul className="space-y-2 text-base text-[#1B1819]">
+                    {[
+                      "Travel Insurance",
+                      "Electric Vehicle Charging",
+                      "Healthcare & Surgeries",
+                    ].map((item) => (
+                      <li key={item}>
+                        <a
+                          href="#"
+                          className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
+                    Company
+                  </h2>
+                  <ul className="space-y-2 text-base text-[#1B1819]">
+                    {["About Us", "Our Work", "Insights", "Contact"].map(
+                      (item) => (
+                        <li key={item}>
+                          <a
+                            href="#"
+                            className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
+                          >
+                            {item}
+                          </a>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+
+                <div>
+                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
+                    Contact
+                  </h2>
+                  <ul className="space-y-2 text-base text-[#1B1819]">
+                    <li>
+                      <a
+                        href="https://maps.google.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
+                      >
+                        <MapPin className="h-5 w-5" aria-hidden="true" />
+                        <span>Hertfordshire, UK</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="tel:+441234567890"
+                        className="flex items-center gap-2 hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
+                      >
+                        <PhoneCall className="h-5 w-5" aria-hidden="true" />
+                        <span>+44 1234 567890</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="mailto:info@recognisedesign.com"
+                        className="flex items-center gap-2 hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
+                      >
+                        <AtSign className="h-5 w-5" aria-hidden="true" />
+                        <span>info@recognisedesign.com</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
             </div>
-            <div className="grid w-full flex-1 grid-cols-1 justify-items-center gap-8 lg:grid-cols-4">
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                  SERVICES
-                </h3>
-                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                  <li>Web Development</li>
-                  <li>Mobile App Development</li>
-                  <li>Email Development</li>
-                  <li>SEO Services</li>
-                  <li>A/B Testing</li>
-                  <li>Cloud Development</li>
-                </ul>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:flex md:flex-col md:items-start md:justify-between md:gap-8">
+              <div className="flex min-w-[180px] flex-col items-start gap-8">
+                <img
+                  src="/logo-blue.png"
+                  alt="RD Digital Logo"
+                  className="mb-2 w-50"
+                />
               </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                  INDUSTRIES
-                </h3>
-                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                  <li>Travel Insurance</li>
-                  <li>Electric Vehicle Charging</li>
-                  <li>Healthcare & Surgeries</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                  COMPANY
-                </h3>
-                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                  <li>About Us</li>
-                  <li>Our Work</li>
-                  <li>Insights</li>
-                  <li>Contact</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                  CONTACT
-                </h3>
-                <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                  <li className="flex items-center gap-2">
-                    <span>
-                      <MapPin />
-                    </span>
-                    Hertfordshire, UK
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span>
-                      <PhoneCall />
-                    </span>
-                    +44 1234 567890
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span>
-                      <AtSign />
-                    </span>
-                    info@recognisedesign.com
-                  </li>
-                </ul>
+              <div className="grid w-full flex-1 grid-cols-1 justify-items-center gap-8 lg:grid-cols-4">
+                <div>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                    SERVICES
+                  </h3>
+                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                    <li>Web Development</li>
+                    <li>Mobile App Development</li>
+                    <li>Email Development</li>
+                    <li>SEO Services</li>
+                    <li>A/B Testing</li>
+                    <li>Cloud Development</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                    INDUSTRIES
+                  </h3>
+                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                    <li>Travel Insurance</li>
+                    <li>Electric Vehicle Charging</li>
+                    <li>Healthcare & Surgeries</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                    COMPANY
+                  </h3>
+                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                    <li>About Us</li>
+                    <li>Our Work</li>
+                    <li>Insights</li>
+                    <li>Contact</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
+                    CONTACT
+                  </h3>
+                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
+                    <li className="flex items-center gap-2">
+                      <span>
+                        <MapPin />
+                      </span>
+                      Hertfordshire, UK
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span>
+                        <PhoneCall />
+                      </span>
+                      +44 1234 567890
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span>
+                        <AtSign />
+                      </span>
+                      info@recognisedesign.com
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div className="mx-auto flex max-w-[90%] flex-col items-center justify-between px-8 py-4 py-10 text-sm font-bold text-white md:flex-row lg:text-xl">
-            <span>© 2025 RD Digital. All rights reserved.</span>
-            <div className="mt-2 flex gap-8 font-normal md:mt-0">
-              <a href="#" className="hover:underline">
-                Sitemap
-              </a>
-              <a href="#" className="hover:underline">
-                Terms & Conditions
-              </a>
-              <a href="#" className="hover:underline">
-                Privacy
-              </a>
+
+          {/* Copyright Section */}
+          <div className="mx-auto max-w-[90%] border-t border-white/10 px-4 py-8 sm:px-8">
+            <div className="flex flex-col items-center justify-between gap-4 text-sm text-white sm:flex-row">
+              <p>
+                © {new Date().getFullYear()} RD Digital. All rights reserved.
+              </p>
+              <nav className="flex gap-8" aria-label="Footer Legal Links">
+                {["Sitemap", "Terms & Conditions", "Privacy"].map((item) => (
+                  <a
+                    key={item}
+                    href="#"
+                    className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
+                  >
+                    {item}
+                  </a>
+                ))}
+              </nav>
             </div>
           </div>
-        </div>
+        </footer>
       </main>
     </>
   );
