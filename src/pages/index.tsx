@@ -639,223 +639,152 @@ export default function Home() {
             </Accordion>
           </div>
         </div>
-        <footer className="w-full bg-[#175070] pt-16 pb-0" role="contentinfo">
+        <footer className="w-full bg-[#175070] pt-16" role="contentinfo">
           <div className="mx-auto max-w-[90%] rounded-3xl bg-white p-8 px-4 py-16 shadow-lg sm:px-8 sm:py-24">
-            {/* Mobile Layout */}
-            <div className="grid grid-cols-1 gap-12 md:hidden">
-              {/* Logo Section */}
-              <div>
-                <img
-                  src="/logo-blue.png"
-                  alt="RD Digital Logo"
-                  className="h-12 w-auto"
-                  width={200}
-                  height={48}
-                />
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
+              <Image
+                src="/logo-blue.png"
+                alt="RD Digitals"
+                width={200}
+                height={200}
+                className="mx-auto"
+              />
+
+              <div className="flex flex-col items-start">
+                <h3 className="mb-4 text-xl font-semibold text-gray-500 uppercase">
+                  Services
+                </h3>
+                <div className="flex flex-col gap-4">
+                  <Link
+                    href="/web-development"
+                    className="text-gray-700 hover:text-orange-400"
+                  >
+                    Web Development
+                  </Link>
+                  <Link
+                    href="/mobile-app-development"
+                    className="text-gray-700 hover:text-orange-400"
+                  >
+                    Mobile App Development
+                  </Link>
+                  <Link
+                    href="/email-development"
+                    className="text-gray-700 hover:text-orange-400"
+                  >
+                    Email Development
+                  </Link>
+                  <Link
+                    href="/seo-services"
+                    className="text-gray-700 hover:text-orange-400"
+                  >
+                    SEO Services
+                  </Link>
+                  <Link
+                    href="/a-b-testing"
+                    className="text-gray-700 hover:text-orange-400"
+                  >
+                    A/B Testing
+                  </Link>
+                  <Link
+                    href="/cloud-development"
+                    className="text-gray-700 hover:text-orange-400"
+                  >
+                    Cloud Development
+                  </Link>
+                </div>
               </div>
 
-              {/* Navigation Sections */}
-              <nav
-                className="grid grid-cols-2 gap-8"
-                aria-label="Footer Navigation"
-              >
-                <div>
-                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
-                    Services
-                  </h2>
-                  <ul className="space-y-2 text-base text-[#1B1819]">
-                    {[
-                      "Web Development",
-                      "Mobile App Development",
-                      "Email Development",
-                      "SEO Services",
-                      "A/B Testing",
-                      "Cloud Development",
-                    ].map((item) => (
-                      <li key={item}>
-                        <a
-                          href="#"
-                          className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+              <div className="flex flex-col items-start">
+                <h3 className="mb-4 text-xl font-semibold text-gray-500 uppercase">
+                  Industries
+                </h3>
+                <div className="flex flex-col gap-4">
+                  <Link
+                    href="/travel-insurance"
+                    className="text-gray-600 hover:text-orange-400"
+                  >
+                    Travel Insurance
+                  </Link>
+                  <Link
+                    href="/electric-vehicle-charging"
+                    className="text-gray-600 hover:text-orange-400"
+                  >
+                    Electric Vehicle Charging
+                  </Link>
+                  <Link
+                    href="/healthcare-surgeries"
+                    className="text-gray-600 hover:text-orange-400"
+                  >
+                    Healthcare & Surgeries
+                  </Link>
                 </div>
+              </div>
 
-                <div>
-                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
-                    Industries
-                  </h2>
-                  <ul className="space-y-2 text-base text-[#1B1819]">
-                    {[
-                      "Travel Insurance",
-                      "Electric Vehicle Charging",
-                      "Healthcare & Surgeries",
-                    ].map((item) => (
-                      <li key={item}>
-                        <a
-                          href="#"
-                          className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
-                    Company
-                  </h2>
-                  <ul className="space-y-2 text-base text-[#1B1819]">
-                    {["About Us", "Our Work", "Insights", "Contact"].map(
-                      (item) => (
-                        <li key={item}>
-                          <a
-                            href="#"
-                            className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
-                          >
-                            {item}
-                          </a>
-                        </li>
-                      ),
-                    )}
-                  </ul>
-                </div>
-
-                <div>
-                  <h2 className="mb-4 text-lg font-semibold text-gray-500">
+              <div className="flex flex-col items-start">
+                <h3 className="mb-4 text-xl font-semibold text-gray-500 uppercase">
+                  Company
+                </h3>
+                <div className="flex flex-col gap-4">
+                  <Link
+                    href="/about-us"
+                    className="text-gray-600 hover:text-orange-400"
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/our-work"
+                    className="text-gray-600 hover:text-orange-400"
+                  >
+                    Our Work
+                  </Link>
+                  <Link
+                    href="/insights"
+                    className="text-gray-600 hover:text-orange-400"
+                  >
+                    Insights
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="text-gray-600 hover:text-orange-400"
+                  >
                     Contact
-                  </h2>
-                  <ul className="space-y-2 text-base text-[#1B1819]">
-                    <li>
-                      <a
-                        href="https://maps.google.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
-                      >
-                        <MapPin className="h-5 w-5" aria-hidden="true" />
-                        <span>Hertfordshire, UK</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="tel:+441234567890"
-                        className="flex items-center gap-2 hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
-                      >
-                        <PhoneCall className="h-5 w-5" aria-hidden="true" />
-                        <span>+44 1234 567890</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="mailto:info@recognisedesign.com"
-                        className="flex items-center gap-2 hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
-                      >
-                        <AtSign className="h-5 w-5" aria-hidden="true" />
-                        <span>info@recognisedesign.com</span>
-                      </a>
-                    </li>
-                  </ul>
+                  </Link>
                 </div>
-              </nav>
-            </div>
-
-            {/* Desktop Layout */}
-            <div className="hidden md:flex md:flex-col md:items-start md:justify-between md:gap-8">
-              <div className="flex min-w-[180px] flex-col items-start gap-8">
-                <img
-                  src="/logo-blue.png"
-                  alt="RD Digital Logo"
-                  className="mb-2 w-50"
-                />
               </div>
-              <div className="grid w-full flex-1 grid-cols-1 justify-items-center gap-8 lg:grid-cols-4">
-                <div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                    SERVICES
-                  </h3>
-                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                    <li>Web Development</li>
-                    <li>Mobile App Development</li>
-                    <li>Email Development</li>
-                    <li>SEO Services</li>
-                    <li>A/B Testing</li>
-                    <li>Cloud Development</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                    INDUSTRIES
-                  </h3>
-                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                    <li>Travel Insurance</li>
-                    <li>Electric Vehicle Charging</li>
-                    <li>Healthcare & Surgeries</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                    COMPANY
-                  </h3>
-                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                    <li>About Us</li>
-                    <li>Our Work</li>
-                    <li>Insights</li>
-                    <li>Contact</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-500 lg:text-2xl">
-                    CONTACT
-                  </h3>
-                  <ul className="text-md space-y-1 text-[#1B1819] xl:text-xl">
-                    <li className="flex items-center gap-2">
-                      <span>
-                        <MapPin />
-                      </span>
-                      Hertfordshire, UK
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span>
-                        <PhoneCall />
-                      </span>
-                      +44 1234 567890
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span>
-                        <AtSign />
-                      </span>
+              <div className="flex flex-col items-start">
+                <h3 className="mb-4 text-xl font-semibold text-gray-500 uppercase">
+                  Contact
+                </h3>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="size-5" />
+                    <span className="text-gray-600">Hertfordshire, UK</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <PhoneCall className="size-5" />
+                    <span className="text-gray-600">+44 1234 567890</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <AtSign className="size-5" />
+                    <span className="text-gray-600">
                       info@recognisedesign.com
-                    </li>
-                  </ul>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Copyright Section */}
-          <div className="mx-auto max-w-[90%] border-t border-white/10 px-4 py-8 sm:px-8">
-            <div className="flex flex-col items-center justify-between gap-4 text-sm text-white sm:flex-row">
-              <p>
-                © {new Date().getFullYear()} RD Digital. All rights reserved.
-              </p>
-              <nav className="flex gap-8" aria-label="Footer Legal Links">
-                {["Sitemap", "Terms & Conditions", "Privacy"].map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="hover:text-orange-400 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:outline-none"
-                  >
-                    {item}
-                  </a>
-                ))}
-              </nav>
-            </div>
+          {/* copyright section */}
+          <div className="flex justify-center py-8 md:justify-between md:px-[5%]">
+            <span className="text-lg text-white">
+              &copy; {new Date().getFullYear()} RD Digitals. All rights
+              reserved.
+            </span>
+            <span className="hidden text-lg text-white md:block">
+              <span className="px-4">Sitemap</span>
+              <span className="px-4">Terms & Conditions</span>
+              <span className="px-4">Privacy</span>
+            </span>
           </div>
         </footer>
       </main>
