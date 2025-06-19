@@ -35,6 +35,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import EmblaCarousel from "@/components/Carousel";
+import ToolCard from "@/components/tool-card";
 
 export default function Home() {
   return (
@@ -55,8 +56,8 @@ export default function Home() {
                   src="/logo.png"
                   alt="Logo"
                   width={100}
-                  height={100}
-                  className="h-full w-auto object-contain"
+                  height={60}
+                  className="h-15 w-auto object-contain"
                   priority
                 />
               </div>
@@ -368,73 +369,23 @@ export default function Home() {
             Tools Built In-House
           </h2>
           <div className="mt-8 flex flex-col gap-8 xl:flex-row xl:justify-evenly">
-            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-4 sm:p-8 md:flex-row md:items-center">
-              <div className="flex h-full items-center">
-                <Image
-                  src="/optiloom.png"
-                  alt="Optiloom logo"
-                  width={250}
-                  height={250}
-                />
-              </div>
-
-              <div className="md:text-lef flex items-center space-y-4 rounded-3xl bg-white p-2">
-                <div>
-                  <h2 className="text-3xl font-semibold text-[#0d5173]">
-                    Opti Loom
-                  </h2>
-                  <div className="text-sm font-light text-gray-700 md:text-xl">
-                    <p>Run AB tests directly on your live site.</p>
-                    <p>Track results.</p>
-                    <p>Make confident changes backed by data.</p>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button
-                    className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300 md:h-20 md:w-20"
-                    aria-label="Learn more"
-                  >
-                    <ArrowUpRight className="size-9 text-gray-700" />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-4 md:flex-row md:items-center">
-              <div className="flex h-full items-center">
-                <Image
-                  src="/change-detection.png"
-                  alt="Change Detection"
-                  width={250}
-                  height={250}
-                />
-              </div>
-
-              <div className="flex flex-grow items-center space-y-4 rounded-3xl bg-white p-8 md:text-left">
-                <div className="flex-grow">
-                  <h2 className="hidden text-3xl font-semibold text-[#0d5173] md:block">
-                    Observe IQ
-                  </h2>
-                  <h2 className="block text-3xl font-semibold text-[#0d5173] md:hidden">
-                    Change Detection
-                  </h2>
-                  <div className="text-sm font-light text-gray-700 md:text-xl">
-                    <p>Automatically log and compare page changes.</p>
-                    <p> See full before-and-after screenshots.</p>
-                    <p>
-                      Cut the back-and-forth between marketing and compliance.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button
-                    className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300 md:h-20 md:w-20"
-                    aria-label="Learn more"
-                  >
-                    <ArrowUpRight className="size-9 text-gray-700" />
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ToolCard
+              imageSrc="/optiloom.png"
+              imageAlt="Optiloom logo"
+              title="Opti Loom"
+              description={[
+                "Run AB tests directly on your live site. Track results. Make confident changes backed by data.",
+              ]}
+            />
+            <ToolCard
+              imageSrc="/change-detection.png"
+              imageAlt="Change Detection"
+              title="Observe IQ"
+              mobileTitle="Change Detection"
+              description={[
+                "Automatically log and compare page changes. See full before-and-after screenshots. Cut the back-and-forth between marketing and compliance.",
+              ]}
+            />
           </div>
         </div>
         <div className="mx-auto w-full px-8 py-4 md:py-6 lg:py-8">
@@ -547,7 +498,7 @@ export default function Home() {
           <h3 className="pb-8 text-center text-lg font-light text-white md:text-xl lg:text-2xl">
             Need a partner that works across tech and compliance?
           </h3>
-          <Button className="mx-auto flex h-16 w-48 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-64 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
+          <Button className="mx-auto mb-20 flex h-16 w-48 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-64 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
             Let&apos;s Talk
             <ArrowUpRight className="size-10" strokeWidth={1} />
           </Button>
@@ -561,7 +512,7 @@ export default function Home() {
                   <span className="pb-3">What our clients say</span>
                   <span className="pb-3">about our services</span>
                 </div>
-                <div className="flex gap-4 pt-16 sm:pt-32">
+                <div className="hidden gap-4 pt-16 sm:pt-32 md:flex">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-500 text-gray-500 hover:cursor-pointer hover:border-gray-400 hover:text-gray-400">
                     <ArrowLeft className="h-6 w-6" />
                   </div>
@@ -614,7 +565,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto w-full px-8 py-4 md:py-6 lg:py-8">
-          <h2 className="text-2xl font-medium text-[#175070] md:text-3xl lg:text-5xl">
+          <h2 className="text-5xl font-medium text-orange-400 md:text-5xl md:text-[#175070]">
             FAQ
           </h2>
           <div className="mt-8">
