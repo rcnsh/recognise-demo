@@ -34,10 +34,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { type EmblaOptionsType } from "embla-carousel";
 import EmblaCarousel from "@/components/Carousel";
-
-import "@/styles/embla.css";
 
 export default function Home() {
   return (
@@ -245,8 +242,11 @@ export default function Home() {
           </h3>
           <EmblaCarousel
             slides={[
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-1">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-1"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   Websites using <br />
                   <span className="text-orange-400">umbraco cms</span>
                   <span>
@@ -255,62 +255,89 @@ export default function Home() {
                   </span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-2">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-2"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   Secure hosting and architechure with <br />
                   <span className="text-orange-400">microsoft azure</span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-3">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-3"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   <span className="text-orange-400">high-conversion</span>
                   <br />
                   journeys for customer aquisition
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-4">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-4"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   Automated testing with <br />
                   <span className="text-orange-400">cypress</span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-5">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-5"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   example slide 5 <br />
                   <br />
                   <span className="text-orange-400">####</span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-6">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-6"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   example slide 6 <br />
                   <br />
                   <span className="text-orange-400">####</span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-7">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-7"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   example slide 7 <br />
                   <br />
                   <span className="text-orange-400">####</span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-8">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-8"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   example slide 8 <br />
                   <br />
                   <span className="text-orange-400">####</span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-9">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-9"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   example slide 9 <br />
                   <br />
                   <span className="text-orange-400">####</span>
                 </span>
               </div>,
-              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-10">
-                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+              <div
+                className="min-h-[100px] rounded-xl bg-white p-4 sm:p-10 lg:min-h-[200px]"
+                key="slide-10"
+              >
+                <span className="text-lg font-semibold text-[#1c526f] uppercase md:text-xl lg:text-2xl">
                   example slide 10 <br />
                   <br />
                   <span className="text-orange-400">####</span>
@@ -384,8 +411,11 @@ export default function Home() {
 
               <div className="flex flex-grow items-center space-y-4 rounded-3xl bg-white p-8 md:text-left">
                 <div className="flex-grow">
-                  <h2 className="text-3xl font-semibold text-[#0d5173]">
+                  <h2 className="hidden text-3xl font-semibold text-[#0d5173] md:block">
                     Observe IQ
+                  </h2>
+                  <h2 className="block text-3xl font-semibold text-[#0d5173] md:hidden">
+                    Change Detection
                   </h2>
                   <div className="text-sm font-light text-gray-700 md:text-xl">
                     <p>Automatically log and compare page changes.</p>
@@ -449,12 +479,32 @@ export default function Home() {
           <h3 className="text-xl font-medium text-orange-400 md:text-2xl lg:text-3xl">
             Trusted by digital leaders
           </h3>
-          <hr className="my-8 border-1 border-gray-300" />
+          <hr className="my-8 hidden border-1 border-gray-300 md:block" />
+          <div className="relative my-6 h-30 flex-col justify-between rounded-3xl bg-gray-200 p-4 md:hidden">
+            <div className="flex flex-col pt-4 pb-12 text-[#175070]">
+              <span className="text-4xl font-bold md:text-5xl">+15</span>
+              <span className="text-md md:text-xl">Years of Experience</span>
+            </div>
+            <div className="absolute right-0 bottom-0">
+              <Image
+                src="/clock.png"
+                alt="clock"
+                width={200}
+                height={200}
+                className="h-25 w-25"
+              />
+            </div>
+          </div>
           <div>
-            <span className="text-md text-center font-normal text-gray-700 md:text-xl lg:text-2xl">
+            <span className="text-md hidden font-normal text-gray-700 md:block md:text-xl lg:text-2xl">
               Based in Hertfordshire, serving London and beyond. We work with
               CTOs, CMOs, and Directors who need reliable delivery. They come to
               us when internal teams are stretched or tools are falling short.
+            </span>
+            <span className="text-md block font-normal text-gray-700 md:hidden md:text-xl lg:text-2xl">
+              We work with CTOs, CMOs, and Directors who need reliable delivery.
+              They come to us when internal teams are stretched or tools are
+              falling short.
             </span>
             <div className="text-md flex justify-between py-8 font-normal text-gray-700 md:text-xl lg:text-2xl">
               <div>
@@ -468,7 +518,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="relative flex h-56 w-[35%] flex-col justify-between rounded-3xl bg-gray-200 p-4">
+              <div className="relative hidden h-56 w-[35%] flex-col justify-between rounded-3xl bg-gray-200 p-4 md:block">
                 <div className="flex flex-col">
                   <span className="text-4xl font-bold text-black md:text-5xl">
                     +15
@@ -483,7 +533,7 @@ export default function Home() {
                     alt="clock"
                     width={200}
                     height={200}
-                    className="h-20 w-20 md:h-32 md:w-32 lg:h-40 lg:w-40"
+                    className="h-40 w-40"
                   />
                 </div>
               </div>

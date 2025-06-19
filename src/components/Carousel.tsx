@@ -61,11 +61,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
+        <div
+          className="mx-4 mt-8 h-[4px] w-full rounded-4xl"
+          style={gradientStyle}
+        ></div>
       </div>
-      <div
-        className="mt-8 h-[4px] w-full rounded-4xl"
-        style={gradientStyle}
-      ></div>
     </section>
   );
 };
