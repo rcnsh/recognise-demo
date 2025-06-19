@@ -24,7 +24,6 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import ClientCard from "@/components/client-card";
 import WhatWeBringItem from "@/components/what-we-bring-item";
@@ -35,11 +34,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { type EmblaOptionsType } from "embla-carousel";
+import EmblaCarousel from "@/components/Carousel";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+import "@/styles/embla.css";
 
 export default function Home() {
   return (
@@ -124,27 +122,28 @@ export default function Home() {
             }
             rightContent={
               <div className="flex items-center gap-2 px-4 md:px-8 lg:px-24">
-                <Link href="/contact">
-                  <Button className="flex h-8 w-24 cursor-pointer items-center rounded-full bg-orange-400 text-sm text-white hover:bg-orange-500 md:h-9 md:w-28 md:text-base lg:w-32">
+                <Link href="/contact" className="hidden md:block">
+                  <Button className="h-8 w-24 cursor-pointer items-center rounded-full bg-orange-400 text-sm text-white hover:bg-orange-500 md:h-9 md:w-28 md:text-base lg:w-32">
                     Contact
                     <ArrowUpRight className="h-3 w-3 md:h-4 md:w-4" />
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-slate-600 text-white hover:bg-slate-700 md:h-9 md:w-9">
-                    <Menu className="h-3 w-3 md:h-4 md:w-4" />
+                  <Button className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-white text-[#1c526f] hover:bg-slate-700 md:h-9 md:w-9 md:bg-slate-600 md:text-white">
+                    <Menu className="h-6 w-6 md:h-4 md:w-4" />
                   </Button>
                 </Link>
               </div>
             }
           />
-          <div className="container mx-auto w-full px-4 py-4 md:py-12 lg:py-32">
-            <h1
-              className={cn(
-                "font-weight-600 text-center text-3xl font-bold text-white uppercase sm:text-4xl md:text-5xl lg:text-[64px] xl:text-[80px] 2xl:text-[92px]",
-                jakarta.className,
-              )}
-            >
+          <div className="container mx-auto w-full px-2 py-4 md:py-12 lg:py-32">
+            {/* Mobile Heading */}
+            <h1 className="text-center text-3xl font-semibold text-white uppercase sm:hidden">
+              Web & App Development Specialists in{" "}
+              <span className="text-orange-400">Hertfordshire</span>
+            </h1>
+            {/* Desktop Heading */}
+            <h1 className="hidden text-center text-3xl font-semibold text-white uppercase sm:block md:text-5xl lg:text-[64px] xl:text-[80px] 2xl:text-[92px]">
               High-Performance Web <br className="hidden sm:block" />
               Platforms for <br className="hidden sm:block" />
               <span className="text-orange-400">Regulated Businesses</span>
@@ -167,22 +166,20 @@ export default function Home() {
           </div>
         </section>
         <div className="mx-auto px-4 py-4 md:py-6 lg:py-8">
-          <Image
-            src="/clients.png"
-            alt="Clients"
-            width={2000}
-            height={2000}
-            className="h-auto w-full"
-          />
+          <div className="w-[320px] overflow-x-auto sm:w-full sm:overflow-x-visible">
+            <Image
+              src="/clients.png"
+              alt="Clients"
+              width={2000}
+              height={500}
+              className="h-auto w-[600px] sm:w-full"
+              style={{ minWidth: 600 }}
+            />
+          </div>
         </div>
         <div className="container mx-auto w-full px-4 py-4 md:py-6 lg:py-8">
           <div className="flex flex-col items-center justify-center">
-            <h2
-              className={cn(
-                "text-center text-2xl font-semibold text-[#175070] capitalize md:text-3xl lg:text-5xl",
-                jakarta.className,
-              )}
-            >
+            <h2 className="text-center text-2xl font-semibold text-[#17526f] capitalize md:text-3xl lg:text-5xl">
               You need systems that scale and teams
               <br />
               <span className="text-orange-400">that understand risk</span>
@@ -240,57 +237,101 @@ export default function Home() {
           </div>
         </div>
         <div className="mx-auto mb-12 w-full bg-[url(/rd-background.png)] bg-cover bg-center px-8 py-4 md:py-6 lg:py-8">
-          <h2 className="mx-8 py-8 text-center text-2xl font-medium text-white capitalize md:text-3xl lg:text-5xl">
+          <h2 className="mx-8 py-4 text-center text-2xl font-medium text-white capitalize md:text-3xl lg:text-5xl">
             What We Do
           </h2>
-          <h3 className="text-center text-xl font-light text-white md:text-2xl">
+          <h3 className="mb-6 text-center text-xl font-light text-white md:text-2xl">
             We build and manage
           </h3>
-          <div className="grid grid-cols-1 gap-8 py-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl bg-white p-4 sm:p-10">
-              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
-                Websites using <br />
-                <span className="text-orange-400">umbraco cms</span>
-              </span>
-            </div>
-            <div className="rounded-xl bg-white p-4 sm:p-10">
-              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
-                Secure hosting and architechure with <br />
-                <span className="text-orange-400">microsoft azure</span>
-              </span>
-            </div>
-            <div className="rounded-xl bg-white p-4 sm:p-10">
-              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
-                <span className="text-orange-400">high-conversion</span>
-                <br />
-                journeys for customer aquisition
-              </span>
-            </div>
-            <div className="rounded-xl bg-white p-4 sm:p-10">
-              <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
-                Automated testing with <br />
-                <span className="text-orange-400">cypress</span>
-              </span>
-            </div>
-          </div>
-          <div className="flex gap-8">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300 md:h-16 md:w-16">
-              <ArrowLeft className="h-4 w-4 md:h-6 md:w-6" />
-            </div>
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white text-white hover:cursor-pointer hover:border-gray-300 hover:text-gray-300 md:h-16 md:w-16">
-              <ArrowRight className="h-4 w-4 md:h-6 md:w-6" />
-            </div>
-            <div className="mt-8 h-[4px] w-[90%] rounded-4xl bg-gradient-to-r from-orange-400 from-30% to-white to-30%"></div>
-          </div>
-          <div className="my-8 flex items-center justify-between gap-8">
+          <EmblaCarousel
+            slides={[
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-1">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  Websites using <br />
+                  <span className="text-orange-400">umbraco cms</span>
+                  <span>
+                    <br />
+                    <br />
+                  </span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-2">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  Secure hosting and architechure with <br />
+                  <span className="text-orange-400">microsoft azure</span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-3">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  <span className="text-orange-400">high-conversion</span>
+                  <br />
+                  journeys for customer aquisition
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-4">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  Automated testing with <br />
+                  <span className="text-orange-400">cypress</span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-5">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  example slide 5 <br />
+                  <br />
+                  <span className="text-orange-400">####</span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-6">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  example slide 6 <br />
+                  <br />
+                  <span className="text-orange-400">####</span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-7">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  example slide 7 <br />
+                  <br />
+                  <span className="text-orange-400">####</span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-8">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  example slide 8 <br />
+                  <br />
+                  <span className="text-orange-400">####</span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-9">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  example slide 9 <br />
+                  <br />
+                  <span className="text-orange-400">####</span>
+                </span>
+              </div>,
+              <div className="rounded-xl bg-white p-4 sm:p-10" key="slide-10">
+                <span className="text-xl font-semibold text-[#1c526f] uppercase sm:text-3xl">
+                  example slide 10 <br />
+                  <br />
+                  <span className="text-orange-400">####</span>
+                </span>
+              </div>,
+            ]}
+            options={{
+              slidesToScroll: 1,
+              loop: false,
+              align: "start",
+            }}
+          />
+          <div className="my-8 flex items-center justify-between gap-4">
             <span className="text-center text-sm font-light text-white lg:text-lg xl:text-2xl">
               We help you launch fast, track performance, and reduce review
               cycles.
             </span>
 
-            <Button className="h-16 w-32 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-48 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
+            <Button className="h-16 w-40 cursor-pointer rounded-full bg-orange-400 text-sm text-white hover:bg-orange-600 md:h-12 md:w-48 md:text-base lg:h-16 lg:w-96 lg:text-3xl">
               View all services
-              <ArrowUpRight className="size-10" strokeWidth={1} />
+              <ArrowUpRight className="size-6 md:size-10" strokeWidth={1} />
             </Button>
           </div>
         </div>
@@ -310,12 +351,12 @@ export default function Home() {
                 />
               </div>
 
-              <div className="flex flex-grow items-center space-y-4 rounded-3xl bg-white p-8 text-center md:text-left">
-                <div className="flex-grow">
+              <div className="md:text-lef flex items-center space-y-4 rounded-3xl bg-white p-2">
+                <div>
                   <h2 className="text-3xl font-semibold text-[#0d5173]">
                     Opti Loom
                   </h2>
-                  <div className="text-xl font-light text-gray-700">
+                  <div className="text-sm font-light text-gray-700 md:text-xl">
                     <p>Run AB tests directly on your live site.</p>
                     <p>Track results.</p>
                     <p>Make confident changes backed by data.</p>
@@ -323,18 +364,15 @@ export default function Home() {
                 </div>
                 <div className="flex-shrink-0">
                   <button
-                    className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300"
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300 md:h-20 md:w-20"
                     aria-label="Learn more"
                   >
-                    <ArrowUpRight
-                      className="h-9 w-9 text-gray-700"
-                      strokeWidth={2}
-                    />
+                    <ArrowUpRight className="size-9 text-gray-700" />
                   </button>
                 </div>
               </div>
             </div>
-            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-4 sm:p-8 md:flex-row md:items-center">
+            <div className="flex max-w-4xl flex-col items-center gap-8 rounded-3xl border-2 border-gray-200 bg-gray-50 p-4 md:flex-row md:items-center">
               <div className="flex h-full items-center">
                 <Image
                   src="/change-detection.png"
@@ -344,12 +382,12 @@ export default function Home() {
                 />
               </div>
 
-              <div className="flex flex-grow items-center space-y-4 rounded-3xl bg-white p-8 text-center md:text-left">
+              <div className="flex flex-grow items-center space-y-4 rounded-3xl bg-white p-8 md:text-left">
                 <div className="flex-grow">
                   <h2 className="text-3xl font-semibold text-[#0d5173]">
                     Observe IQ
                   </h2>
-                  <div className="text-xl font-light text-gray-700">
+                  <div className="text-sm font-light text-gray-700 md:text-xl">
                     <p>Automatically log and compare page changes.</p>
                     <p> See full before-and-after screenshots.</p>
                     <p>
@@ -359,13 +397,10 @@ export default function Home() {
                 </div>
                 <div className="flex-shrink-0">
                   <button
-                    className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300"
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300 md:h-20 md:w-20"
                     aria-label="Learn more"
                   >
-                    <ArrowUpRight
-                      className="h-9 w-9 text-gray-700"
-                      strokeWidth={2}
-                    />
+                    <ArrowUpRight className="size-9 text-gray-700" />
                   </button>
                 </div>
               </div>
