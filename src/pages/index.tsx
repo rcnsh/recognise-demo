@@ -24,7 +24,6 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 import ClientCard from "@/components/client-card";
 import WhatWeBringItem from "@/components/what-we-bring-item";
 import Star from "@/components/svgs/star";
@@ -36,6 +35,7 @@ import {
 } from "@/components/ui/accordion";
 import EmblaCarousel from "@/components/Carousel";
 import ToolCard from "@/components/tool-card";
+import GoogleRating from "@/components/google-box";
 
 export default function Home() {
   return (
@@ -640,8 +640,8 @@ export default function Home() {
           </div>
         </div>
         <footer className="w-full bg-[#175070] pt-16" role="contentinfo">
-          <div className="mx-auto max-w-[90%] rounded-3xl bg-white p-8 px-4 py-16 shadow-lg sm:px-8 sm:py-24">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
+          <div className="mx-auto max-w-[90%] rounded-3xl bg-white p-8 px-4 py-8 shadow-lg sm:px-8 sm:py-12">
+            <div className="mx-8 grid grid-cols-1 gap-8 md:grid-cols-5">
               <Image
                 src="/logo-blue.png"
                 alt="RD Digitals"
@@ -773,6 +773,45 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div className="mt-10 flex flex-col items-center gap-4 md:mt-0 md:flex-row md:justify-between">
+              <div className="flex gap-2">
+                <div className="rounded-full bg-[#175070] p-4">
+                  <svg
+                    width="18"
+                    height="15"
+                    viewBox="0 0 18 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.23741 6.46691C6.06923 4.4912 9.29121 3.18869 10.9033 2.55938C15.5063 0.762581 16.4627 0.450458 17.0861 0.440041C17.2232 0.437884 17.5298 0.469775 17.7284 0.621004C17.8961 0.748699 17.9422 0.921196 17.9643 1.04226C17.9864 1.16333 18.0139 1.43913 17.992 1.65463C17.7426 4.11431 16.6633 10.0833 16.1142 12.8382C15.8818 14.0039 15.4244 14.3948 14.9815 14.433C14.0189 14.5161 13.288 13.836 12.3558 13.2625C10.897 12.365 10.0729 11.8064 8.65691 10.9306C7.02048 9.91856 8.08131 9.3623 9.0139 8.45323C9.25797 8.21532 13.4988 4.5951 13.5809 4.26669C13.5912 4.22562 13.6007 4.07252 13.5038 3.99167C13.4069 3.91083 13.2639 3.93848 13.1606 3.96046C13.0143 3.99163 10.6839 5.43724 6.16938 8.29729C5.5079 8.72358 4.90875 8.93129 4.37193 8.9204C3.78013 8.90841 2.64175 8.60637 1.79548 8.34819C0.757494 8.03153 -0.0674757 7.86411 0.00436067 7.32632C0.0417775 7.04621 0.452793 6.75974 1.23741 6.46691Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div className="rounded-full bg-[#175070] p-4">
+                  <svg
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M13.6 2.73994C12.1 1.23994 10.1 0.439941 8 0.439941C3.6 0.439941 0 4.03994 0 8.43994C0 9.83994 0.400006 11.2399 1.10001 12.4399L0 16.4399L4.20001 15.3399C5.40001 15.9399 6.7 16.3399 8 16.3399C12.4 16.3399 16 12.7399 16 8.33994C16 6.23994 15.1 4.23994 13.6 2.73994ZM8 15.0399C6.8 15.0399 5.60001 14.7399 4.60001 14.1399L4.39999 14.0399L1.89999 14.7399L2.60001 12.3399L2.39999 12.0399C1.69999 10.9399 1.39999 9.73994 1.39999 8.53994C1.39999 4.93994 4.4 1.93994 8 1.93994C9.8 1.93994 11.4 2.63994 12.7 3.83994C14 5.13994 14.6 6.73994 14.6 8.53994C14.6 12.0399 11.7 15.0399 8 15.0399ZM11.6 10.0399C11.4 9.93994 10.4 9.43994 10.2 9.43994C10 9.33994 9.89999 9.33994 9.79999 9.53994C9.69999 9.73994 9.30001 10.1399 9.20001 10.3399C9.10001 10.4399 8.99999 10.4399 8.79999 10.4399C8.59999 10.3399 8.00001 10.1399 7.20001 9.43994C6.60001 8.93994 6.20001 8.23994 6.10001 8.03994C6.00001 7.83994 6.10001 7.73994 6.20001 7.63994C6.30001 7.53994 6.4 7.43994 6.5 7.33994C6.6 7.23994 6.60001 7.13994 6.70001 7.03994C6.80001 6.93994 6.70001 6.83994 6.70001 6.73994C6.70001 6.63994 6.30001 5.63994 6.10001 5.23994C6.00001 4.93994 5.80001 4.93994 5.70001 4.93994C5.60001 4.93994 5.49999 4.93994 5.29999 4.93994C5.19999 4.93994 4.99999 4.93994 4.79999 5.13994C4.59999 5.33994 4.10001 5.83994 4.10001 6.83994C4.10001 7.83994 4.79999 8.73994 4.89999 8.93994C4.99999 9.03994 6.29999 11.1399 8.29999 11.9399C9.99999 12.6399 10.3 12.4399 10.7 12.4399C11.1 12.4399 11.9 11.9399 12 11.5399C12.2 11.0399 12.2 10.6399 12.1 10.6399C12 10.1399 11.8 10.1399 11.6 10.0399Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <GoogleRating
+                rating={5.0}
+                maxRating={5}
+                reviewText="See all our reviews"
+              />
+            </div>
           </div>
           {/* copyright section */}
           <div className="flex justify-center py-8 md:justify-between md:px-[5%]">
@@ -781,9 +820,15 @@ export default function Home() {
               reserved.
             </span>
             <span className="hidden text-lg text-white md:block">
-              <span className="px-4">Sitemap</span>
-              <span className="px-4">Terms & Conditions</span>
-              <span className="px-4">Privacy</span>
+              <span className="px-4 hover:cursor-pointer hover:text-gray-200">
+                Sitemap
+              </span>
+              <span className="px-4 hover:cursor-pointer hover:text-gray-200">
+                Terms & Conditions
+              </span>
+              <span className="px-4 hover:cursor-pointer hover:text-gray-200">
+                Privacy
+              </span>
             </span>
           </div>
         </footer>
